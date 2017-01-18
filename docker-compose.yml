@@ -1,0 +1,17 @@
+version: '2'
+
+services:
+  mongodb:
+    build: ./Dockerfile
+    ports:
+      - "27017:27017"
+      - "28017:28017"
+    expose:
+     - "27017"
+     - "28017"
+    volumes:
+      - ./data:/data
+    network_mode: "host"
+volumes:
+  data:
+    driver: local
